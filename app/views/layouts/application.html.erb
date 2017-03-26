@@ -9,6 +9,14 @@
   </head>
 
   <body>
+  	<nav class="navbar">
+  		<%= link_to "Home", root_path %>
+  		<%= link_to "Find Books", controller: "books" %>
+  		<%= link_to "Add a Book", new_book_path %>
+  	</nav>
     <%= yield %>
+    <footer>
+    	<small> From the labs of the Wombat!</small>
+    </footer>
   </body>
 </html>
