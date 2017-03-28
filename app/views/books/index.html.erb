@@ -1,6 +1,10 @@
 <h1>Available Books</h1>
-<ul>
+<table>
 	<% @books.each do |book| %>
-		<li><%= book.title %>: <%= link_to "View this book", book_path(book) %></li>
+		<tr>
+			<td><%= book.title %></td>
+			<td><%= link_to "View", book_path(book) %></td>
+			<td><%= link_to "Edit", edit_book_path(book) %></td>
+		</tr>
 	<%end%>
-</ul>
+</table>
