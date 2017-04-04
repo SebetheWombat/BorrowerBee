@@ -11,6 +11,24 @@
 	<%= @book.description %>
 </p>
 
+<p>
+	<strong>Genres:</strong>
+	<% @book.genres.each do |genre| %>
+		<a href=""><%= genre.subject %></a>
+	<%end%>
+</p>
+
+
+<h3>Add Genre</h3>
+<%= form_for([@book, @book.genres.build]) do |f| %>
+	<p>
+		<%= f.label :subject %>
+		<%= f.text_field :subject %>
+	</p>
+	<%= f.submit %>
+
+<%end%>
+
 <%= link_to "Edit", edit_book_path(@book) %>
 <%= link_to "Remove", book_path(@book), method: :delete, data: {confirm: "Are you sure you want to remove this book?"} %>
 <%= link_to "Back", books_path %>
