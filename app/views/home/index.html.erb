@@ -1,2 +1,5 @@
 <h1 class="fancy">Borrower Bee!</h1>
-
+<%= form_tag(books_path, :method => "get", id: "book-search") do %>
+	<%= text_field_tag :search, params[:search], placeholder: "Search Library" %>
+	<%= submit_tag "Search" %>
+<%end%>
