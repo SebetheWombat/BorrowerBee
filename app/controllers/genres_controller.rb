@@ -1,4 +1,7 @@
 class GenresController < ApplicationController
+	def index
+	end
+
 	def create
 		@book = Book.find(params[:book_id])
 		@genre = @book.genres.create(genre_params)
