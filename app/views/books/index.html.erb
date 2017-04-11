@@ -1,6 +1,6 @@
 <h1>Available Books</h1>
 <% if @books.blank? %>
-	<p>Sorry, there are no books whose title or author match <%= params[:search] %></p>
+	<p>Sorry, there are no books whose title or author match <strong><%= params[:search] %></strong></p>
 <%else%>
 	<table>
 		<% @books.each do |book| %>

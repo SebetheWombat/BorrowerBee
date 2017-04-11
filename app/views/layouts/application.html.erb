@@ -11,9 +11,16 @@
   <body>
   	<nav class="navbar">
   		<%= link_to "Home", root_path %>
-  		<%= link_to "Browse", controller: "books" %>
+  		<%= link_to "Browse", books_path %>
   		<%= link_to "Add a Book", new_book_path %>
+        <%= link_to "Sign Up", new_user_registration_path %>
   	</nav>
+    <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
     <%= yield %>
     <footer>
     	<small> From the labs of the Wombat!</small>

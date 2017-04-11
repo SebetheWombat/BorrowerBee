@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :books do
-  	resources :genres
-  end
-
-  root 'home#index'
+  devise_for :users
+  	root 'home#index'
+    resources :books do
+  		resources :genres
+    end
 
 end
